@@ -1,0 +1,63 @@
+/* Standard Text Alignment */
+.container-fluid{
+  text-align: center;
+  padding: 2% 15%;
+}
+
+/* Heading/explanation of website */
+.heading-container{
+  background-color: brown;
+  color: #fff;
+  font-family: Merriweather;
+  font-weight: 600;
+}
+
+.heading-img{
+  width: 35%;
+}
+
+.big-heading{
+  font-size: 3rem;
+}
+
+.small-heading{
+  font-size: 2rem;
+}
+
+/* Roll buttons */
+.button-container{
+  background-color: brown;
+  font-family: Merriweather;
+}
+
+.roll-button{
+  margin: 1% 20% 1% 20%;
+  color: #fff;
+}
+
+/* Challenge Results */
+.challenge-container{
+  background-color: brown;
+  font-family: Merriweather;
+  color: #fff;
+}
+
+.challenge-results{
+  font-size: 1rem;
+}
+
+/* Credits */
+.credits .container-fluid{
+  padding: 7% 15% .5% 15%;
+  background-color: brown;
+  color: #fff;
+}
+
+.fa-2x{
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.credits-icon{
+  color: inherit;
+}
