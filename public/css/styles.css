@@ -1,3 +1,9 @@
+html {
+  min-height: 100%;
+  position: relative;
+  background-color: brown;
+}
+
 /* Standard Text Alignment */
 .container-fluid{
   text-align: center;
@@ -48,9 +54,11 @@
 
 /* Credits */
 .credits .container-fluid{
-  padding: 7% 15% .5% 15%;
+  padding: 3% 15% .5% 15%;
   background-color: brown;
   color: #fff;
+  bottom: 0;
+  position: absolute;
 }
 
 .fa-2x{

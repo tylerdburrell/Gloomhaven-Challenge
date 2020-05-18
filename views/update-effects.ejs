@@ -1,0 +1,15 @@
+<%- include("partials/header"); -%>
+    <h1>Add Effects</h1>
+    <form class="" action="/compose" method="post">
+      <div class="form-group">
+        <select id="effectType" name="effectType">
+          <option value="positive">Positive</option>
+          <option value="negative">Negative</option>
+        </select>
+        <label>Effect</label>
+        <input class="form-control" type="text" name="effectContent">
+      </div>
+      <button class="btn btn-primary" type="submit" name="button">Add</button>
+    </form>
+
+<%- include("partials/footer"); -%>

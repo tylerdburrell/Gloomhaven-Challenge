@@ -18,8 +18,27 @@ mongoose.connect("mongodb+srv://admin-tyler:"+ process.env.DB_PASS +"@cluster0-h
   useUnifiedTopology: true
 });
 
+const Schema = mongoose.Schema;
+
+const effectSchema = new Schema({
+  type: String,
+  content: String
+});
+
 app.get("/", function(req, res){
   res.render("home");
+});
+
+app.get("/free-roll", function(req, res){
+  res.render("free-roll");
+});
+
+app.get("/effects-list", function(req, res){
+  res.render("effects-list");
+});
+
+app.get("/hidden/post/update-effects", function(req, res){
+  res.render("update-effects");
 });
 
 app.listen(3000, function() {
