@@ -1,7 +1,12 @@
 html {
   min-height: 100%;
   position: relative;
-  background-color: brown;
+  background-color: #4d3e3e;
+}
+
+/* navbar color */
+.nb-color{
+  background-color: #581c0c;
 }
 
 /* Standard Text Alignment */
@@ -12,7 +17,7 @@ html {
 
 /* Heading/explanation of website */
 .heading-container{
-  background-color: brown;
+  background-color: #4d3e3e;
   color: #fff;
   font-family: Merriweather;
   font-weight: 600;
@@ -32,7 +37,7 @@ html {
 
 /* Roll buttons */
 .button-container{
-  background-color: brown;
+  background-color: #4d3e3e;
   font-family: Merriweather;
 }
 
@@ -43,7 +48,7 @@ html {
 
 /* Challenge Results */
 .challenge-container{
-  background-color: brown;
+  background-color: #4d3e3e;
   font-family: Merriweather;
   color: #fff;
 }
@@ -55,7 +60,7 @@ html {
 /* Credits */
 .credits .container-fluid{
   padding: 3% 15% .5% 15%;
-  background-color: brown;
+  background-color: #4d3e3e;
   color: #fff;
   bottom: 0;
   position: absolute;
