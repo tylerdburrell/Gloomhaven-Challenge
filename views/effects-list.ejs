@@ -4,9 +4,19 @@
   <div class="row">
     <div class="col">
       <h3><u>Negative Effects</u></h3>
+      <% effectItems.forEach(function(effect){%>
+        <% if(effect.type === "Negative"){%>
+            <p><%= effect.content %></p>
+        <%}%>
+      <%}) %>
     </div>
     <div class="col">
       <h3><u>Positve Effects</u></h3>
+      <% effectItems.forEach(function(effect){%>
+        <% if(effect.type === "Positive"){%>
+            <p><%= effect.content %></p>
+        <%}%>
+      <%}) %>
     </div>
   </div>
 </div>
