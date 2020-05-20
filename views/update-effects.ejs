@@ -1,15 +1,43 @@
 <%- include("partials/header"); -%>
-    <h1>Add Effects</h1>
-    <form class="" action="/compose" method="post">
-      <div class="form-group">
-        <select id="effectType" name="effectType">
-          <option value="positive">Positive</option>
-          <option value="negative">Negative</option>
-        </select>
-        <label>Effect</label>
-        <input class="form-control" type="text" name="effectContent">
-      </div>
-      <button class="btn btn-primary" type="submit" name="button">Add</button>
-    </form>
 
+<div class="container-fluid challenge-container">
+  <div class="row">
+    <div class="col">
+      <h3><u>Negative Effects</u></h3>
+      <% effectItems.forEach(function(effect){%>
+        <% if(effect.type === "Negative"){%>
+          <form action="/delete" method="post">
+            <div>
+              <p><%= effect.content %></p>
+              <button type="submit" name="list" value="Negative">x</button>
+            </div>
+            <input type="hidden" name="listName" value="Negative"></input>
+          </form>
+        <%}%>
+      <%}) %>
+      <form action="/" method="post">
+        <input type="text" name="newContent" placeholder="Content" autocomplete="off">
+        <button type="submit" name="type" value="Negative">+</button>
+      </form>
+    </div>
+    <div class="col">
+      <h3><u>Positve Effects</u></h3>
+      <% effectItems.forEach(function(effect){%>
+        <% if(effect.type === "Positive"){%>
+          <form action="/delete" method="post">
+            <div>
+              <p><%= effect.content %></p>
+              <button type="submit" name="list" value="Positive">x</button>
+            </div>
+            <input type="hidden" name="listName" value="Positive"></input>
+          </form>
+        <%}%>
+      <%}) %>
+      <form action="/" method="post">
+        <input type="text" name="newContent" placeholder="Content" autocomplete="off">
+        <button type="submit" name="type" value="Positive">+</button>
+      </form>
+    </div>
+  </div>
+</div>
 <%- include("partials/footer"); -%>

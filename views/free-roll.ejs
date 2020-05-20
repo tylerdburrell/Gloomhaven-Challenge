@@ -13,7 +13,7 @@
 <section id="roll-button">
   <div class="container-fluid button-container">
       <div class="">
-        <button class="btn btn-dark btn-lrg roll-button" onclick="randomEffects()" type="button" name="button"><i class="fas fa-dice-six"></i> Roll <i class="fas fa-dice-six"></i></button>
+        <button class="btn btn-dark btn-lrg roll-button" onclick="window.location.reload();" type="button" name="button"><i class="fas fa-dice-six"></i> Roll <i class="fas fa-dice-six"></i></button>
       </div>
   </div>
 </section>
@@ -24,16 +24,14 @@
     <div class="row">
       <div class="col-6">
         <h3><u>Negative Effects</u></h3>
-        <span id="negativeEffect" class="challenge-results"></span>
+        <p><%= negative%></p>
       </div>
       <div class="col-6">
         <h3><u>Positve Effects</u></h3>
-        <span id="positiveEffect" class="challenge-results"></span>
+        <p><%= positive%></p>
       </div>
     </div>
   </div>
 </section>
-
-<script src=scripts/scripts.js type="text/javascript"></script>
 
 <%- include("partials/footer"); -%>

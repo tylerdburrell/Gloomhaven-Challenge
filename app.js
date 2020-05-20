@@ -25,33 +25,65 @@ const effectsSchema = {
 
 const Effect = mongoose.model("Effect", effectsSchema);
 
+var randomNegative = "";
+var randomPositive = "";
+
 app.get("/", function(req, res){
   res.render("home");
 });
 
 app.get("/free-roll", function(req, res){
-  res.render("free-roll");
+
+  Effect.aggregate([
+      {$match: {type: "Negative"}},
+      {$sample: {size: 1}}
+  ]).then(function(res){
+    randomNegative = res[0].content;
+  });
+
+  Effect.aggregate([
+      {$match: {type: "Positive"}},
+      {$sample: {size: 1}}
+  ]).then(function(res){
+    randomPositive = res[0].content;
+  });
+
+  res.render("free-roll", {
+    negative: randomNegative,
+    positive: randomPositive
+  });
 });
 
 app.get("/effects-list", function(req, res){
 
   Effect.find({}, function(err, foundEffects){
-    if(foundEffects.length === 0){
-      console.log("no items");
-      res.redirect("/");
-    }else {
-      console.log("success");
-
       res.render("effects-list", {
         effectItems: foundEffects
       });
-    }
-
   });
 });
 
-app.get("/hidden/post/update-effects", function(req, res){
-  res.render("update-effects");
+app.get("/update-effects", function(req, res){
+  Effect.find({}, function(err, foundEffects){
+      res.render("update-effects", {
+        effectItems: foundEffects
+      });
+  });
+});
+
+app.post("/", function(req, res) {
+
+  const effectContent = req.body.newContent;
+  const effectType = req.body.type;
+
+  const effect = new Effect({
+    type: effectType,
+    content: effectContent
+  });
+
+  effect.save();
+  res.redirect("/update-effects");
+
 });
 
 let port = process.env.PORT;
