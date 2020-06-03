@@ -4,6 +4,11 @@ html {
   background-color: #4d3e3e;
 }
 
+@font-face {
+  font-family: pirataOne;
+  src: url(PirataOne-Regular.ttf);
+}
+
 /* navbar color */
 .nb-color{
   background-color: #581c0c;
@@ -19,7 +24,7 @@ html {
 .heading-container{
   background-color: #4d3e3e;
   color: #fff;
-  font-family: Merriweather;
+  font-family: pirataOne;
   font-weight: 600;
 }
 
