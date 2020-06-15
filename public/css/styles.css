@@ -1,8 +1,8 @@
 html {
-  min-height: 100%;
-  position: relative;
   background-color: #4d3e3e;
+  min-height: 100%;
 }
+
 
 @font-face {
   font-family: pirataOne;
@@ -54,7 +54,7 @@ html {
 /* Challenge Results */
 .challenge-container{
   background-color: #4d3e3e;
-  font-family: Merriweather;
+  font-family: pirataOne;
   color: #fff;
 }
 
@@ -68,7 +68,7 @@ html {
   background-color: #4d3e3e;
   color: #fff;
   bottom: 0;
-  position: absolute;
+  position: relative;
 }
 
 .fa-2x{

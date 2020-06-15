@@ -6,13 +6,13 @@
       <h3><u>Negative Effects</u></h3>
       <% effectItems.forEach(function(effect){%>
         <% if(effect.type === "Negative"){%>
-          <form action="/delete" method="post">
             <div>
               <p><%= effect.content %></p>
-              <button type="submit" name="list" value="Negative">x</button>
+              <form action="/delete" method="post">
+                <button type="submit" name="delete" value="<%= effect._id%>">x</button>
+              </form>
             </div>
             <input type="hidden" name="listName" value="Negative"></input>
-          </form>
         <%}%>
       <%}) %>
       <form action="/" method="post">
@@ -24,13 +24,13 @@
       <h3><u>Positve Effects</u></h3>
       <% effectItems.forEach(function(effect){%>
         <% if(effect.type === "Positive"){%>
-          <form action="/delete" method="post">
-            <div>
-              <p><%= effect.content %></p>
-              <button type="submit" name="list" value="Positive">x</button>
-            </div>
+          <div>
+            <p><%= effect.content %></p>
+            <form action="/delete" method="post">
+              <button type="submit" name="delete" value="<%= effect._id%>">x</button>
+            </form>
+          </div>
             <input type="hidden" name="listName" value="Positive"></input>
-          </form>
         <%}%>
       <%}) %>
       <form action="/" method="post">

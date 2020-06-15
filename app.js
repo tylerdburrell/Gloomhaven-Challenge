@@ -86,6 +86,20 @@ app.post("/", function(req, res) {
 
 });
 
+app.post("/delete", function(req, res) {
+
+  const checkedItemID = req.body.delete;
+
+  Effect.findByIdAndRemove(checkedItemID, function(err) {
+    if (err) {
+      console.log(err);
+    }
+
+    res.redirect("/update-effects");
+  });
+
+});
+
 let port = process.env.PORT;
 if (port == null || port == ""){
   port = 3000;
