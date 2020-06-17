@@ -4,7 +4,7 @@
   "description": "A place to track your fishing trips and view data to inform your future trips.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "app.js"
   },
   "author": "Tyler Burrell",
   "license": "ISC",
