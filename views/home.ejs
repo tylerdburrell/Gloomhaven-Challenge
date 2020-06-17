@@ -4,42 +4,64 @@
 <section id="header">
   <div class="container-fluid heading-container">
     <h1 class="big-heading">Gloomhaven Challenge Mode!</h1>
-    <h3 class="small-heading">Roll to generate your challenge</h3>
-    <h5 class="real-small-heading">Each character in the party rolls for their effects.</h5>
+    <h3 class="small-heading">Add the characters in your party to see your challenge</h3>
   </div>
 </section>
 
 <!-- Add Character button -->
 <section id="roll-button">
   <div class="container-fluid button-container">
-      <select class="" name="">
-        <option value="">Brute</option>
-        <option value="">Cragheart</option>
-        <option value="">Mindthief</option>
-        <option value="">Scoundrel</option>
-        <option value="">Spellweaver</option>
-        <option value="">Tinkerer</option>
-        <option value="">"Two Minis"</option>
-        <option value="">"Angry Face"</option>
-        <option value="">"Eclipse"</option>
-        <option value="">"Three Spears"</option>
-        <option value="">"Triangles"</option>
-        <option value="">"Sun"</option>
-        <option value="">"Circles"</option>
-        <option value="">"Lightning"</option>
-        <option value="">"Music Notes"</option>
-        <option value="">"Saw"</option>
-        <option value="">"Cthulhu"</option>
+      <select id="class-select" class="" name="">
+        <option value="Brute">Brute</option>
+        <option value="Cragheart">Cragheart</option>
+        <option value="Mindthief">Mindthief</option>
+        <option value="Scoundrel">Scoundrel</option>
+        <option value="Spellweaver">Spellweaver</option>
+        <option value="Tinkerer">Tinkerer</option>
+        <option value="Two Minis">Two Minis</option>
+        <option value="Angry Face">Angry Face</option>
+        <option value="Eclipse">Eclipse</option>
+        <option value="Three Spears">Three Spears</option>
+        <option value="Triangles">Triangles</option>
+        <option value="Sun">Sun</option>
+        <option value="Circles">Circles</option>
+        <option value="Lightning">Lightning</option>
+        <option value="Music Note">Music Note</option>
+        <option value="Saw">Saw</option>
+        <option value="Cthulhu">Cthulhu</option>
       </select>
       <div class="">
-        <button class="btn btn-dark btn-lrg roll-button" onclick="randomEffects()" type="button" name="button">Add Character <i class="fas fa-plus"></i></button>
+        <button class="btn btn-dark btn-lrg roll-button" onclick="addChar()" type="button" name="button">Add Character <i class="fas fa-plus"></i></button>
       </div>
   </div>
 </section>
 
 <!-- Challenge results -->
 <section id=players>
-
+  <div class="container-fluid challenge-container">
+    <div class="row">
+      <div class="col">
+        <img id="class-img1" src="class-img" style="display:none;">
+        <p id="neg1" style="display:none;">Negative: <%= negative1%></p>
+        <p id="pos1" style="display:none;">Positive: <%= positive1%></p>
+      </div>
+      <div class="col">
+        <img id="class-img2" src="class-img" style="display:none;">
+        <p id="neg2" style="display:none;">Negative: <%= negative2%></p>
+        <p id="pos2" style="display:none;">Positive: <%= positive2%></p>
+      </div>
+      <div class="col">
+        <img id="class-img3" src="class-img" style="display:none;">
+        <p id="neg3" style="display:none;">Negative: <%= negative3%></p>
+        <p id="pos3" style="display:none;">Positive: <%= positive3%></p>
+      </div>
+      <div class="col">
+        <img id="class-img4" src="class-img" style="display:none;">
+        <p id="neg4" style="display:none;">Negative: <%= negative4%></p>
+        <p id="pos4" style="display:none;">Positive: <%= positive4%></p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <script src=scripts/scripts.js type="text/javascript"></script>

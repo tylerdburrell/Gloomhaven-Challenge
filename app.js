@@ -27,9 +27,85 @@ const Effect = mongoose.model("Effect", effectsSchema);
 
 var randomNegative = "";
 var randomPositive = "";
+var randomNegative1 = "";
+var randomPositive1 = "";
+var randomNegative2 = "";
+var randomPositive2 = "";
+var randomNegative3 = "";
+var randomPositive3 = "";
+var randomNegative4 = "";
+var randomPositive4 = "";
 
 app.get("/", function(req, res){
-  res.render("home");
+
+    Effect.aggregate([
+        {$match: {type: "Negative"}},
+        {$sample: {size: 1}}
+    ]).then(function(res){
+      randomNegative1 = res[0].content;
+    });
+
+    Effect.aggregate([
+        {$match: {type: "Positive"}},
+        {$sample: {size: 1}}
+    ]).then(function(res){
+      randomPositive1 = res[0].content;
+    });
+
+    Effect.aggregate([
+        {$match: {type: "Negative"}},
+        {$sample: {size: 1}}
+    ]).then(function(res){
+      randomNegative2 = res[0].content;
+    });
+
+    Effect.aggregate([
+        {$match: {type: "Positive"}},
+        {$sample: {size: 1}}
+    ]).then(function(res){
+      randomPositive2 = res[0].content;
+    });
+
+    Effect.aggregate([
+        {$match: {type: "Negative"}},
+        {$sample: {size: 1}}
+    ]).then(function(res){
+      randomNegative3 = res[0].content;
+    });
+
+    Effect.aggregate([
+        {$match: {type: "Positive"}},
+        {$sample: {size: 1}}
+    ]).then(function(res){
+      randomPositive3 = res[0].content;
+    });
+
+    Effect.aggregate([
+        {$match: {type: "Negative"}},
+        {$sample: {size: 1}}
+    ]).then(function(res){
+      randomNegative4 = res[0].content;
+    });
+
+    Effect.aggregate([
+        {$match: {type: "Positive"}},
+        {$sample: {size: 1}}
+    ]).then(function(res){
+      randomPositive4 = res[0].content;
+    });
+
+
+
+  res.render("home", {
+    negative1: randomNegative1,
+    positive1: randomPositive1,
+    negative2: randomNegative2,
+    positive2: randomPositive2,
+    negative3: randomNegative3,
+    positive3: randomPositive3,
+    negative4: randomNegative4,
+    positive4: randomPositive4
+  });
 });
 
 app.get("/free-roll", function(req, res){
