@@ -15,7 +15,7 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGOLAB_PINK_URI, {
+mongoose.connect("mongodb+srv://admin-tyler:merrychristmas@cluster0-h3nyl.gcp.mongodb.net/gloomDB?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
