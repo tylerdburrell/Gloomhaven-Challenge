@@ -30,7 +30,7 @@ app.get("/", async function (req, res) {
   const negativeEffects = await getRandomEffect("Negative", 4);
   res.render("home", {
     negative: negativeEffects,
-    positive: negativeEffects,
+    positive: positiveEffects,
   });
 });
 
