@@ -11,28 +11,29 @@
 <!-- Add Character button -->
 <section id="roll-button">
   <div class="container-fluid button-container">
-      <select id="class-select" class="" name="">
-        <option value="Brute">Brute</option>
-        <option value="Cragheart">Cragheart</option>
-        <option value="Mindthief">Mindthief</option>
-        <option value="Scoundrel">Scoundrel</option>
-        <option value="Spellweaver">Spellweaver</option>
-        <option value="Tinkerer">Tinkerer</option>
-        <option value="Two Minis">Two Minis</option>
-        <option value="Angry Face">Angry Face</option>
-        <option value="Eclipse">Eclipse</option>
-        <option value="Three Spears">Three Spears</option>
-        <option value="Triangles">Triangles</option>
-        <option value="Sun">Sun</option>
-        <option value="Circles">Circles</option>
-        <option value="Lightning">Lightning</option>
-        <option value="Music Note">Music Note</option>
-        <option value="Saw">Saw</option>
-        <option value="Cthulhu">Cthulhu</option>
-      </select>
-      <div class="">
-        <button class="btn btn-dark btn-lrg roll-button" onclick="addChar()" type="button" name="button">Add Character <i class="fas fa-plus"></i></button>
-      </div>
+    <select id="class-select" class="" name="">
+      <option value="Brute">Brute</option>
+      <option value="Cragheart">Cragheart</option>
+      <option value="Mindthief">Mindthief</option>
+      <option value="Scoundrel">Scoundrel</option>
+      <option value="Spellweaver">Spellweaver</option>
+      <option value="Tinkerer">Tinkerer</option>
+      <option value="Two Minis">Two Minis</option>
+      <option value="Angry Face">Angry Face</option>
+      <option value="Eclipse">Eclipse</option>
+      <option value="Three Spears">Three Spears</option>
+      <option value="Triangles">Triangles</option>
+      <option value="Sun">Sun</option>
+      <option value="Circles">Circles</option>
+      <option value="Lightning">Lightning</option>
+      <option value="Music Note">Music Note</option>
+      <option value="Saw">Saw</option>
+      <option value="Cthulhu">Cthulhu</option>
+    </select>
+    <div class="">
+      <button class="btn btn-dark btn-lrg roll-button" onclick="addChar()" type="button" name="button">Add Character <i
+          class="fas fa-plus"></i></button>
+    </div>
   </div>
 </section>
 
@@ -40,27 +41,14 @@
 <section id=players>
   <div class="container-fluid challenge-container">
     <div class="row">
-      <div class="col">
-        <img id="class-img1" src="class-img" style="display:none;">
-        <p id="neg1" style="display:none;">Negative: <%= negative1%></p>
-        <p id="pos1" style="display:none;">Positive: <%= positive1%></p>
-      </div>
-      <div class="col">
-        <img id="class-img2" src="class-img" style="display:none;">
-        <p id="neg2" style="display:none;">Negative: <%= negative2%></p>
-        <p id="pos2" style="display:none;">Positive: <%= positive2%></p>
-      </div>
-      <div class="col">
-        <img id="class-img3" src="class-img" style="display:none;">
-        <p id="neg3" style="display:none;">Negative: <%= negative3%></p>
-        <p id="pos3" style="display:none;">Positive: <%= positive3%></p>
-      </div>
-      <div class="col">
-        <img id="class-img4" src="class-img" style="display:none;">
-        <p id="neg4" style="display:none;">Negative: <%= negative4%></p>
-        <p id="pos4" style="display:none;">Positive: <%= positive4%></p>
-      </div>
-    </div>
+      <% for(var i = 0; i < negative.length; i++) {
+        <div class="col">
+            <img id="class-img2" src="class-img" style="display:none;">
+            <p id="neg2" style="display:none;">Negative: <%= negative[i]%></p>
+            <p id="pos2" style="display:none;">Positive: <%= positive[i]%></p>
+        </div>
+    <% } %>
+  </div>
   </div>
 </section>
 
